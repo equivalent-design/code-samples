@@ -5,7 +5,7 @@ This repository contains code samples for working with SmartSVG:tm:. They meant 
 ## Front End Libraries
 
 * [React](./React/)
-* Angular
+* [Angular](./Angular/)
 * [Vue.js](./Vue/)
 
 ## Static Site Generators
