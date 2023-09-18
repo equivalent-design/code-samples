@@ -26,8 +26,8 @@ npx ng serve
 ```
 
 This will compile the standard Angular app and serve it at
-`http://localhost:4200/`. Open you browser with this URL and you should see the
-Angular welcome screen.
+[`http://localhost:4200/`](http://localhost:4200/). Open you browser with this
+URL and you should see the Angular welcome screen.
 
 
 ## Adding SmartSVG:tm: to our Angular App
@@ -36,7 +36,7 @@ The Angular welcome screen already contains a number of SVG images.
 Unfortunately, none of the is smart yet. Thus,in a next step, we will replace
 the Angular logo with the Equivalent Design SmartSVG:tm: logo.
 
-### SmartSVG:tm: as Inline SVG
+### SmartSVG:tm: as Inline SVG in Angular
 
 As a first exercise we replace the Angular rocket with our Equivalent Design
 logo. While inside the `smartSVG` folder open the file
@@ -83,10 +83,11 @@ and add the `app-smart-svg` component.
   <div class="card highlight-card card-small">
 ```
 
-Inspect the result in the browser at `http://localhost:4200/`. Zoom or resize
-your browser window and observe the change when the client window is smaller
-than 480px.  Change the settings of your operating system from light to dark
-mode and observe the change of the logo.
+Inspect the result in the browser at
+[`http://localhost:4200/`](http://localhost:4200/). Zoom or resize your browser
+window and observe the change when the client window is smaller than 480px.
+Change the settings of your operating system from light to dark mode and observe
+the change of the logo.
 
 ### SmartSVG:tm: as Angular Component
 

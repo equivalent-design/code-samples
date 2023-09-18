@@ -53,8 +53,9 @@ Now we serve the app by running
 npx esbuild app.tsx --bundle --servedir=www/ --outdir=www/js
 ```
 
-If you open your web browser and go to URL `localhost:8000` you should see the
-`hello world` message on the page.
+If you open your web browser and go to URL
+[`http://localhost:8000/`](http://localhost:8000/) you should see the `hello
+world` message on the page.
 
 ## Adding SmartSVG:tm: as a React-SVG component
 
@@ -103,7 +104,8 @@ Now serve the app again by running
 npx esbuild app.tsx --bundle --servedir=www/ --outdir=www/js
 ```
 
-If you reload URL `localhost:8000` in your web browser you should see the
-SmartSVG:tm: sample. Resize your browser window and observe the change when the
-client window is smaller than 480px.  Change the settings of your operating
-system from light to dark mode and observe the change of the logo.
+If you reload URL [`http://localhost:8000/`](http://localhost:8000/) in your web
+browser you should see the SmartSVG:tm: sample. Resize your browser window and
+observe the change when the client window is smaller than 480px.  Change the
+settings of your operating system from light to dark mode and observe the change
+of the logo.
