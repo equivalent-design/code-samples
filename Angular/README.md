@@ -89,7 +89,7 @@ window and observe the change when the client window is smaller than 480px.
 Change the settings of your operating system from light to dark mode and observe
 the change of the logo.
 
-### SmartSVG:tm: as Angular Component
+### SmartSVG:tm: as Angular Template
 
 This technique is similar to previous one, with the exception that we use the
 SVG file directly as a template from the assets directory. First create the
