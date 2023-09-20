@@ -1,0 +1,6 @@
+- name: SVG as Include in HTRML
+  link: /
+- name: SVG in-line in Markdown
+  link: /about.html
+- name: SVG in-line in HTML
+  link: /inline.html
