@@ -10,6 +10,6 @@ This repository contains code samples for working with SmartSVG:tm:. They meant 
 
 ## Static Site Generators
 
-* Jekyll
+* [Jekyll](./Jekyll)
 * Hugo
 * ElevenTy
