@@ -1,6 +1,6 @@
 # Jekyll and SmartSVG:tm:
 
-Install Jekyll following the instructions at [https://jekyllrb.com/].
+Install Jekyll following the instructions at [jekyllrb.com](https://jekyllrb.com/).
 
 ``` shell
 gem install jekyll bundler
