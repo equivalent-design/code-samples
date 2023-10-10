@@ -1,4 +1,5 @@
 theme: minima
+layout: default
 title: Code Samples for SmartSVG Integration
 description: Learn how to use SmartSVG in all your projects.
 kramdown:
