@@ -38,6 +38,8 @@ As an example copy the example file
 into you `smartSVG` directory and serve the page. Direct your browser to
 [http://localhost:4000/equivalent/] and observe the embedded smart SVG.
 
+Alternatively have a look at the page [here](./equivalent.html).
+
 ## SmartSVG:tm: as Asset
 
 
