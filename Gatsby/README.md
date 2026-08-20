@@ -52,3 +52,27 @@ operating system from light to dark mode and observe the change of the logo.
 
 ## SmartSVG:tm: as a Static Asset
 
+If you don't need the SVG's markup inlined into the DOM, you can skip
+`react-svg` entirely. [`smart.svg`](./smart.svg) is already in `static/`
+from the section above, so just reference it with a plain `img` tag:
+
+``` jsx
+export default function IndexPage() {
+  return (
+    <main>
+      <h1>SmartSVG&#8482; Gatsby Sample</h1>
+      <img src="/smart.svg" alt="Equivalent" />
+    </main>
+  )
+}
+```
+
+This drops the extra dependency, but note two differences from the inlined
+version. The `<title>` inside the SVG is no longer exposed to assistive
+technology once the browser treats it as an opaque image, so give the
+`img` its own `alt` text as shown above. And any `@media (max-width: ...)`
+breakpoint inside the SVG now tracks the rendered size of the `img`
+element itself rather than the page's viewport, since a linked SVG image
+gets its own independent viewport. The `prefers-color-scheme` and
+`forced-colors` handling keep working exactly as before, since that logic
+lives entirely inside the SVG file itself.

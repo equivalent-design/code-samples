@@ -70,3 +70,27 @@ change of the logo.
 
 ## SmartSVG:tm: as a Static Asset
 
+If you don't need the SVG's markup inlined into the DOM, you can skip
+`vite-svg-loader` entirely — and the style-extraction step it requires.
+Place [`smart.svg`](./smart.svg) in Nuxt's `public/` folder instead of
+`assets/` — everything there is served from the site root unchanged — and
+reference it with a plain `img` tag:
+
+``` vue
+<template>
+  <main>
+    <h1>SmartSVG&#8482; Nuxt Sample</h1>
+    <img src="/smart.svg" alt="Equivalent" />
+  </main>
+</template>
+```
+
+This drops the extra dependency and the style-extraction step, but note
+two differences from the inlined version. The `<title>` inside the SVG is
+no longer exposed to assistive technology once the browser treats it as an
+opaque image, so give the `img` its own `alt` text as shown above. And any
+`@media (max-width: ...)` breakpoint inside the SVG now tracks the
+rendered size of the `img` element itself rather than the page's viewport,
+since a linked SVG image gets its own independent viewport. The
+`prefers-color-scheme` and `forced-colors` handling keep working exactly
+as before, since that logic lives entirely inside the SVG file itself.

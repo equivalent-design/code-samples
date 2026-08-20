@@ -46,3 +46,23 @@ Alternatively have a look at the page [here](./equivalent.html).
 
 ## SmartSVG:tm: as Asset
 
+Rather than inlining the markup, you can also serve the SmartSVG:tm: as a
+plain file. Place [`smart.svg`](./smart.svg) in Hugo's `static/` folder —
+everything there is copied to the site root unchanged — and reference it
+with standard Markdown image syntax:
+
+``` markdown
+![Equivalent](/smart.svg)
+```
+
+Note that this doesn't need the `unsafe = true` Goldmark setting from
+above, since Markdown's own image syntax (rather than raw HTML) is enough
+here. It's also simpler, but note two differences from the inline version.
+The `<title>` inside the SVG is no longer exposed to assistive technology
+once the browser treats it as an opaque image, so give the Markdown image
+its own descriptive text as shown above. And any `@media (max-width: ...)`
+breakpoint inside the SVG now tracks the rendered size of the `<img>`
+element itself rather than the page's viewport, since a linked SVG image
+gets its own independent viewport. The `prefers-color-scheme` and
+`forced-colors` handling keep working exactly as before, since that logic
+lives entirely inside the SVG file itself.

@@ -55,3 +55,23 @@ Alternatively have a look at the page [here](./equivalent.html).
 
 ## SmartSVG:tm: as Asset
 
+Rather than inlining the markup, you can also serve the SmartSVG:tm: as a
+plain file. Place [`smart.svg`](./smart.svg) in a `static/` folder at the
+project root, alongside `content/` — Zola copies it to the site root
+unchanged — and reference it with standard Markdown image syntax:
+
+``` markdown
+![Equivalent](/smart.svg)
+```
+
+This is simpler than the inline version, and doesn't need the
+`templates/page.html` change above either since it's the same page
+template either way. But note two differences from inlining. The `<title>`
+inside the SVG is no longer exposed to assistive technology once the
+browser treats it as an opaque image, so give the Markdown image its own
+descriptive text as shown above. And any `@media (max-width: ...)`
+breakpoint inside the SVG now tracks the rendered size of the `<img>`
+element itself rather than the page's viewport, since a linked SVG image
+gets its own independent viewport. The `prefers-color-scheme` and
+`forced-colors` handling keep working exactly as before, since that logic
+lives entirely inside the SVG file itself.
