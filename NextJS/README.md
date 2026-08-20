@@ -55,3 +55,41 @@ operating system from light to dark mode and observe the change of the logo.
 
 ## SmartSVG:tm: as a Static Export
 
+Next.js can also build the whole app down to plain HTML/CSS/JS with no
+Node.js server required, via [static
+export](https://nextjs.org/docs/app/guides/static-exports). Add
+`output: 'export'` to `next.config.ts`:
+
+``` typescript
+import type { NextConfig } from 'next'
+
+const nextConfig: NextConfig = {
+  output: 'export',
+}
+
+export default nextConfig
+```
+
+Then build the site:
+
+``` shell
+npm run build
+```
+
+This produces a fully static copy of the site in `out/` — everything under
+`public/` (including `smart.svg`) is copied over unchanged. Serve it with
+any static file server, for example:
+
+``` shell
+npx serve out
+```
+
+The `page.tsx` from the section above needs no changes at all: `ReactSVG`
+does its fetching and DOM injection in the browser at runtime, which is
+just client-side JavaScript and doesn't depend on a running Next.js server,
+so the SmartSVG:tm: sample keeps working exactly as before once exported.
+The one thing to watch for in general is that static export can't serve
+routes that require a live server — Server Actions, on-demand ISR, dynamic
+`next/image` optimization, and Route Handlers that read the request all
+need `output: 'export'` left off — but none of those are used by this
+sample.
