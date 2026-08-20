@@ -44,3 +44,24 @@ change of the logo.
 
 ## SmartSVG:tm: as a Static Asset
 
+If you don't need the SVG's markup inlined into the DOM, you can skip the
+style-extraction step entirely and serve it as a plain file instead. Place
+[`smart.svg`](./smart.svg) in the project's `public/` folder — Vite copies
+anything in `public/` to the output root unchanged, so `public/smart.svg`
+is served at `/smart.svg`.
+
+``` svelte
+<h1>SmartSVG&#8482; Svelte Sample</h1>
+<img src="/smart.svg" alt="Equivalent" />
+```
+
+This is the simplest option, but note two differences from the inline
+version. First, the internal `<title>` is no longer exposed to assistive
+technology because the browser treats the file as an opaque image, so supply
+your own `alt` text as shown above. Second, any `@media (max-width: ...)`
+breakpoint inside the SVG now tracks the rendered size of the `<img>`
+element itself rather than the page's viewport, since a linked SVG image
+gets its own independent viewport — which is actually convenient here, since
+it makes the logo responsive to its own box instead of the whole page. The
+`prefers-color-scheme` and `forced-colors` handling keep working exactly as
+before, since that logic lives entirely inside the SVG file itself.
