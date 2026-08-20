@@ -11,5 +11,5 @@ This repository contains code samples for working with SmartSVG™. They are mea
 ## Static Site Generators
 
 * [Jekyll](./Jekyll)
-* Hugo
-* ElevenTy
+* [Hugo](./Hugo)
+* [Eleventy](./Eleventy)
