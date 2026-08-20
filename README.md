@@ -8,6 +8,12 @@ This repository contains code samples for working with SmartSVG™. They are mea
 * [Angular](./Angular/)
 * [Vue.js](./Vue/)
 
+## Meta Frameworks
+
+* [Next.js](./NextJS/)
+* [Gatsby](./Gatsby/)
+* [Astro](./Astro/)
+
 ## Static Site Generators
 
 * [Jekyll](./Jekyll)
