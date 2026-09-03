@@ -21,6 +21,7 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy(svg);
   }
   eleventyConfig.addPassthroughCopy("assets/css/style.css");
+  eleventyConfig.addPassthroughCopy("assets/images");
 
   // All content is plain README.md / equivalent.md with no front matter of
   // its own, so give every page the same layout by default.
@@ -61,5 +62,9 @@ module.exports = function (eleventyConfig) {
     // inline SVG) and even literal `{{ }}` Liquid/Tera examples in code
     // fences — never run it through the Nunjucks engine, only the layout.
     markdownTemplateEngine: false,
+    // GitHub Pages serves a project repo (as opposed to a <user>.github.io
+    // repo) from /<repo-name>/, not /. Every absolute link built with the
+    // `url` filter in _layouts/base.njk picks this up automatically.
+    pathPrefix: "/code-samples/",
   };
 };
