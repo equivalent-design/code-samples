@@ -6,7 +6,7 @@ applications, we will use the [React SVG
 component](https://www.npmjs.com/package/react-svg) library.
 
 The code sample can be found at
-[github.com/equivalent-design/code-samples/React](https://github.com/equivalent-design/code-samples/React).
+[equivalent.md](https://github.com/equivalent-design/code-samples/tree/main/React).
 
 ## The `hello world` Sample
 
@@ -94,8 +94,7 @@ root.render(<App />);
 ```
 
 Either insert your own SmartSVG:tm: file or use the file provided with the code
-sample that can be found at
-[github.com/equivalent-design/smartsvg-code-samples/React](https://github.com/equivalent-design/smartsvg-code-samples/React). It
+sample that can be found at [equivalent.md](https://github.com/equivalent-design/code-samples/tree/main/React). It
 contains the Equivalent Logo as a SmartSVG:tm: in the `www` folder.
 
 Now serve the app again by running
