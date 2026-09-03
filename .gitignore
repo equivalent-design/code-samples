@@ -130,3 +130,6 @@ dist
 .pnp.*
 
 *~
+
+# Eleventy build output
+_site/
