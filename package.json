@@ -2,6 +2,7 @@
   "name": "smartsvg-code-samples-site",
   "private": true,
   "description": "Eleventy build for the SmartSVG code-samples documentation site (GitHub Pages).",
+  "packageManager": "pnpm@11.20.0",
   "scripts": {
     "build": "eleventy",
     "start": "eleventy --serve"
