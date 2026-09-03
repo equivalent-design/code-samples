@@ -5,15 +5,43 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{{ title }} · SmartSVG Code Samples</title>
 <meta name="description" content="Code samples for integrating SmartSVG into front-end libraries, meta frameworks and static site generators.">
-<link rel="stylesheet" href="/assets/css/style.css">
+<link rel="icon" type="image/svg+xml" href="{{ '/assets/images/favicon.svg' | url }}">
+<link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
+<script>
+  (function () {
+    var stored = null;
+    try { stored = localStorage.getItem("color-scheme"); } catch (e) {}
+    var dark = stored ? stored === "dark" : window.matchMedia("(prefers-color-scheme: dark)").matches;
+    document.documentElement.setAttribute("data-color-scheme", dark ? "dark" : "light");
+  })();
+</script>
 </head>
 <body>
 <header>
-  <a class="brand" href="/">SmartSVG Code Samples</a>
+  <a class="brand" href="{{ '/' | url }}">
+    <img class="logo logo-light" src="{{ '/assets/images/logo-light.svg' | url }}" alt="Equivalent">
+    <img class="logo logo-dark" src="{{ '/assets/images/logo-dark.svg' | url }}" alt="Equivalent">
+    <span>Code Samples</span>
+  </a>
   <a href="https://github.com/equivalent-design/code-samples">GitHub</a>
+  <label class="theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
+    <input type="checkbox" id="theme-toggle">
+  </label>
 </header>
 <main>
 {{ content | safe }}
 </main>
+<script>
+  (function () {
+    var input = document.getElementById("theme-toggle");
+    var root = document.documentElement;
+    input.checked = root.getAttribute("data-color-scheme") === "dark";
+    input.addEventListener("change", function () {
+      var mode = input.checked ? "dark" : "light";
+      root.setAttribute("data-color-scheme", mode);
+      try { localStorage.setItem("color-scheme", mode); } catch (e) {}
+    });
+  })();
+</script>
 </body>
 </html>

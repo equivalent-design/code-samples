@@ -18,8 +18,12 @@
   --font-body: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 }
 
+/* Dark palette applies for a system preference (no explicit choice made
+   yet) and is then overridden either way once the header switch — or a
+   stored preference from a previous visit — sets data-color-scheme
+   explicitly on <html> (see the inline script in _layouts/base.njk). */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-color-scheme="light"]) {
     --color-background-primary: #171717;
     --color-background-secondary: #303030;
     --color-text-primary: #f7f7f7;
@@ -33,6 +37,21 @@
     --color-border-card: #2e2e2e;
     --color-shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.55);
   }
+}
+
+:root[data-color-scheme="dark"] {
+  --color-background-primary: #171717;
+  --color-background-secondary: #303030;
+  --color-text-primary: #f7f7f7;
+  --color-text-secondary: #f7f7f7;
+  --color-text-tertiary: #909090;
+  --color-border-primary: #666666;
+  --color-border-secondary: #666666;
+  --color-accent: #00ccff;
+  --color-accent-translucent: rgba(0, 204, 255, 0.16);
+  --color-surface-card: #1f1f1f;
+  --color-border-card: #2e2e2e;
+  --color-shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.55);
 }
 
 * {
@@ -72,6 +91,9 @@ header a {
 }
 
 header a.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.6em;
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-text-primary);
@@ -79,6 +101,53 @@ header a.brand {
 
 header a:hover {
   color: var(--color-accent);
+}
+
+header .logo {
+  height: 22px;
+  width: auto;
+}
+
+.logo-dark { display: none; }
+
+:root[data-color-scheme="dark"] .logo-light { display: none; }
+:root[data-color-scheme="dark"] .logo-dark { display: block; }
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) .logo-light { display: none; }
+  :root:not([data-color-scheme="light"]) .logo-dark { display: block; }
+}
+
+header .theme-switch {
+  margin-left: auto;
+  display: inline-flex;
+  width: 56px;
+  height: 25px;
+  flex-shrink: 0;
+  border-radius: 999px;
+  cursor: pointer;
+  background-image: url("../images/toggle-light.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+:root[data-color-scheme="dark"] header .theme-switch {
+  background-image: url("../images/toggle-dark.svg");
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not([data-color-scheme="light"]) header .theme-switch {
+    background-image: url("../images/toggle-dark.svg");
+  }
+}
+
+header .theme-switch input {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
 }
 
 main {
