@@ -117,13 +117,21 @@ header a {
   font-weight: 600;
 }
 
-header a.brand {
+header .brand {
   display: flex;
   align-items: center;
   gap: 0.6em;
+}
+
+header .brand-text {
   font-family: var(--font-heading);
   font-weight: 700;
   color: var(--color-text-primary);
+}
+
+header .logo-link {
+  display: flex;
+  align-items: center;
 }
 
 header a:hover {

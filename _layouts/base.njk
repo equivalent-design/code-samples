@@ -18,11 +18,13 @@
 </head>
 <body>
 <header>
-  <a class="brand" href="{{ '/' | url }}">
-    <img class="logo logo-light" src="{{ '/assets/images/logo-light.svg' | url }}" alt="Equivalent">
-    <img class="logo logo-dark" src="{{ '/assets/images/logo-dark.svg' | url }}" alt="Equivalent">
-    <span>Code Samples</span>
-  </a>
+  <div class="brand">
+    <a class="logo-link" href="https://smartsvg.io">
+      <img class="logo logo-light" src="{{ '/assets/images/logo-light.svg' | url }}" alt="Equivalent">
+      <img class="logo logo-dark" src="{{ '/assets/images/logo-dark.svg' | url }}" alt="Equivalent">
+    </a>
+    <a class="brand-text" href="{{ '/' | url }}">Code Samples</a>
+  </div>
   <a href="https://github.com/equivalent-design/code-samples">GitHub</a>
   <label class="theme-switch" for="theme-toggle" aria-label="Toggle dark mode">
     <input type="checkbox" id="theme-toggle">
