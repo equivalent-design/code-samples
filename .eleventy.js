@@ -1,9 +1,19 @@
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+const emoji = require("markdown-it-emoji");
 
 module.exports = function (eleventyConfig) {
   // Build-time Prism highlighting for fenced code blocks (```shell, ```tsx,
   // ...) — no client-side highlighting JS shipped to the page.
   eleventyConfig.addPlugin(syntaxHighlight);
+
+  // The tutorials write the trademark as the Jekyll/jemoji shortcode
+  // `:tm:` (e.g. "SmartSVG:tm:"). `bare` + a single custom def keeps this
+  // scoped to just that shortcode instead of pulling in the full gemoji
+  // dictionary. Inline rules like this don't run inside fenced code blocks,
+  // so literal `:tm:` shown as sample text stays untouched.
+  eleventyConfig.amendLibrary("md", (mdLib) =>
+    mdLib.use(emoji.bare, { defs: { tm: "™" } })
+  );
 
   // Every framework folder ships its own smart.svg (Angular's and Vue's live
   // a bit deeper, inside their scaffolded projects) — mirror exactly the
