@@ -25,7 +25,7 @@ ids and classes used in the markup above.
 
 Replace `src/App.svelte` with the following.
 
-``` svelte
+``` html
 <h1>SmartSVG&#8482; Svelte Sample</h1>
 <svg id="DemoSVG" ...>
 ....
@@ -50,7 +50,7 @@ style-extraction step entirely and serve it as a plain file instead. Place
 anything in `public/` to the output root unchanged, so `public/smart.svg`
 is served at `/smart.svg`.
 
-``` svelte
+``` html
 <h1>SmartSVG&#8482; Svelte Sample</h1>
 <img src="/smart.svg" alt="Equivalent" />
 ```

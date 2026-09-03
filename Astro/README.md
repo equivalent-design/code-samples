@@ -15,7 +15,7 @@ Astro ships zero JavaScript by default and `.astro` component templates
 accept raw HTML directly, so no library is required — simply paste the
 SmartSVG:tm: markup straight into the template.
 
-``` astro
+```html
 ---
 ---
 <html lang="en">
@@ -48,7 +48,7 @@ plain file. Place [`smart.svg`](./smart.svg) in the `public/` folder —
 everything there is copied to the site root unchanged — and reference it
 with a plain `img` tag in the template:
 
-``` astro
+``` html
 <img src="/smart.svg" alt="Equivalent" />
 ```
 

@@ -45,7 +45,7 @@ separately — we will re-add it as a scoped style on the wrapping component.
 
 Replace `app.vue` with the following.
 
-``` vue
+``` html
 <script setup lang="ts">
 import SmartIcon from '~/assets/smart.svg?component'
 </script>
@@ -76,7 +76,7 @@ Place [`smart.svg`](./smart.svg) in Nuxt's `public/` folder instead of
 `assets/` — everything there is served from the site root unchanged — and
 reference it with a plain `img` tag:
 
-``` vue
+``` html
 <template>
   <main>
     <h1>SmartSVG&#8482; Nuxt Sample</h1>
