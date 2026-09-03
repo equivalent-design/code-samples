@@ -88,7 +88,7 @@ Move the Style out to the end of the file as:
 A special technique is to load the SmartSVG:tm: icons as a dedicated components
 after changing the `.svg` extension to `.vue`.
 
-``` JavaScript
+``` javascript
 import smartUrl from './components/icons/IconSmart.vue'
 ```
 

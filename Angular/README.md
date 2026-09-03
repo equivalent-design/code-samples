@@ -77,7 +77,7 @@ Next, while inside the `smartSVG` folder open the file
 `src/app/app.component.html`, find the line commented `<!-- Highlight Card -->`
 and add the `app-smart-svg` component.
 
-``` XML
+``` xml
   <!-- Highlight Card -->
   <app-smart-svg />
   <div class="card highlight-card card-small">
@@ -103,7 +103,7 @@ Ensure that the `smart.svg` file is at in the `src/assets/svg/` folder.  Then
 open the `smart-svg/smarg-svg.component.ts` file and edit the `templateUrl` as
 follows
 
-``` JavaScript
+``` javascript
   templateUrl: '../../assets/svg/smart.svg',
 ```
 

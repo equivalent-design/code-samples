@@ -14,6 +14,15 @@
   --color-border-card: #e0e0e0;
   --color-shadow-card: 0px 2px 12px rgba(0, 0, 0, 0.12);
 
+  --code-keyword: #0066cc;
+  --code-string: #0f7a3d;
+  --code-function: #7c3aed;
+  --code-tag: #b91c1c;
+  --code-attr-name: #a6580c;
+  --code-class-name: #7c3aed;
+  --code-number: #0e7490;
+  --code-variable: #a6580c;
+
   --font-heading: "Montserrat", "Segoe UI", Arial, sans-serif;
   --font-body: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 }
@@ -36,6 +45,15 @@
     --color-surface-card: #1f1f1f;
     --color-border-card: #2e2e2e;
     --color-shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.55);
+
+    --code-keyword: #00ccff;
+    --code-string: #4ade80;
+    --code-function: #c084fc;
+    --code-tag: #f87171;
+    --code-attr-name: #fbbf24;
+    --code-class-name: #c084fc;
+    --code-number: #22d3ee;
+    --code-variable: #fbbf24;
   }
 }
 
@@ -52,6 +70,15 @@
   --color-surface-card: #1f1f1f;
   --color-border-card: #2e2e2e;
   --color-shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.55);
+
+  --code-keyword: #00ccff;
+  --code-string: #4ade80;
+  --code-function: #c084fc;
+  --code-tag: #f87171;
+  --code-attr-name: #fbbf24;
+  --code-class-name: #c084fc;
+  --code-number: #22d3ee;
+  --code-variable: #fbbf24;
 }
 
 * {
@@ -179,18 +206,120 @@ pre {
   padding: 1em;
   background: var(--color-surface-card);
   border: 1px solid var(--color-border-card);
-  border-radius: 4px;
+  border-radius: 6px;
   box-shadow: var(--color-shadow-card);
+  line-height: 1.5;
 }
 
 code {
   font-size: 0.9em;
+  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
 }
 
 :not(pre) > code {
   padding: 0.15em 0.4em;
   background: var(--color-accent-translucent);
   border-radius: 4px;
+}
+
+/* JS wraps every `pre` in a .code-block div (see assets/js/copy-code.js) so
+   the copy button can sit fixed in the corner without scrolling away when
+   a long line makes the `pre` itself scroll horizontally. */
+.code-block {
+  position: relative;
+  margin: 1.2em 0;
+}
+
+.code-block pre {
+  margin: 0;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.55em;
+  right: 0.55em;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  padding: 0;
+  background: var(--color-background-secondary);
+  color: var(--color-text-tertiary);
+  border: 1px solid var(--color-border-card);
+  border-radius: 5px;
+  cursor: pointer;
+  opacity: 0.55;
+  transition: opacity 120ms ease, color 120ms ease, border-color 120ms ease;
+}
+
+.code-block:hover .copy-btn,
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  opacity: 1;
+}
+
+.copy-btn:hover,
+.copy-btn:focus-visible {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.copy-btn.copied {
+  opacity: 1;
+  color: #22c55e;
+  border-color: #22c55e;
+}
+
+/* Prism token colors (via @11ty/eleventy-plugin-syntaxhighlight, build-time —
+   no highlighting JS shipped to the page). Values are set as CSS custom
+   properties above so light/dark just swaps the palette like everything else. */
+.token.keyword {
+  color: var(--code-keyword);
+}
+
+.token.string,
+.token.attr-value {
+  color: var(--code-string);
+}
+
+.token.function {
+  color: var(--code-function);
+  font-weight: 600;
+}
+
+.token.comment {
+  color: var(--color-text-tertiary);
+  font-style: italic;
+}
+
+.token.tag,
+.token.doctype-tag {
+  color: var(--code-tag);
+}
+
+.token.attr-name {
+  color: var(--code-attr-name);
+}
+
+.token.class-name {
+  color: var(--code-class-name);
+}
+
+.token.number,
+.token.boolean {
+  color: var(--code-number);
+}
+
+.token.parameter,
+.token.variable,
+.token.property {
+  color: var(--code-variable);
+}
+
+.token.operator,
+.token.punctuation {
+  color: var(--color-text-tertiary);
 }
 
 img, svg {

@@ -1,4 +1,10 @@
+const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
+
 module.exports = function (eleventyConfig) {
+  // Build-time Prism highlighting for fenced code blocks (```shell, ```tsx,
+  // ...) — no client-side highlighting JS shipped to the page.
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // Every framework folder ships its own smart.svg (Angular's and Vue's live
   // a bit deeper, inside their scaffolded projects) — mirror exactly the
   // files the READMEs link to, rather than a recursive glob that would also
@@ -22,6 +28,7 @@ module.exports = function (eleventyConfig) {
   }
   eleventyConfig.addPassthroughCopy("assets/css/style.css");
   eleventyConfig.addPassthroughCopy("assets/images");
+  eleventyConfig.addPassthroughCopy("assets/js");
 
   // All content is plain README.md / equivalent.md with no front matter of
   // its own, so give every page the same layout by default.
