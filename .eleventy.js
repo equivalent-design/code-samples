@@ -26,8 +26,6 @@ module.exports = function (eleventyConfig) {
     "Hugo/smart.svg",
     "Jekyll/smart.svg",
     "Nuxt/smart.svg",
-    "React/smart.svg",
-    "React/www/smart.svg",
     "Svelte/smart.svg",
     "Zola/smart.svg",
     "Angular/smartSVG/src/assets/svg/smart.svg",
