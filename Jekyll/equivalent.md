@@ -4,7 +4,6 @@ title: In-line in Markdoown
 ---
 # SVG as Include in HTRML.
 
-{::nomarkdown}
 <svg id="DemoSVG" role="img" lang="en" aria-labelledby="#DemoSVG_title" xmlns="http://www.w3.org/2000/svg" display="block" preserveAspectRatio="xMinYMin slice" viewBox="0 0 3652 2260">
 <title id="DemoSVG_title">Vector illustration of a device with colorful arrows..</title>
 <style>
@@ -93,5 +92,3 @@ title: In-line in Markdoown
   <rect x="0" y="0" width="100%" height="100%" fill="canvasText" mask="url(#DemoSVG_mask_CTO)" />
 </g>
 </svg>
-
-{:/}

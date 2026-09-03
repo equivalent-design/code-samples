@@ -51,8 +51,6 @@ As an example copy the example file
 into your `smartSVG/content` directory and serve the page. Direct your browser to
 [http://127.0.0.1:1111/equivalent/] and observe the embedded smart SVG.
 
-Alternatively have a look at the page [here](./equivalent.html).
-
 ## SmartSVG:tm: as Asset
 
 Rather than inlining the markup, you can also serve the SmartSVG:tm: as a
