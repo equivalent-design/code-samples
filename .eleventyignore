@@ -1,0 +1,16 @@
+# Scaffolded/boilerplate app READMEs — not part of the docs site content.
+Angular/smartSVG/
+Vue/smartsvg-project/
+
+# Scratch / exploratory work, not part of the published site.
+attic/
+react-minimal-project/
+
+# GitHub issue templates, not docs content.
+.github/
+
+# Zola's front matter uses TOML (+++) — gray-matter's delimiter is
+# configured globally, so it can't be auto-detected alongside the YAML
+# (---) front matter every other file uses. Kept as reference source only,
+# linked straight to GitHub from Zola/README.md.
+Zola/equivalent.md

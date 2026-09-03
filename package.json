@@ -1,0 +1,12 @@
+{
+  "name": "smartsvg-code-samples-site",
+  "private": true,
+  "description": "Eleventy build for the SmartSVG code-samples documentation site (GitHub Pages).",
+  "scripts": {
+    "build": "eleventy",
+    "start": "eleventy --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0"
+  }
+}
