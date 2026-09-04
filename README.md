@@ -2,6 +2,10 @@
 
 This repository contains code samples for working with SmartSVG™. They are meant as tutorials to get you started using SmartSVG™ in your own projects. While they are free to use and modify, please respect any Copyrights.
 
+## Installation Guide
+
+* [Installing SmartSVG on Any Website](./Installation/)
+
 ## Front End Libraries
 
 * [React](./React/)
