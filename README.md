@@ -5,7 +5,10 @@ This repository contains code samples for working with SmartSVG™. They are mea
 ## Installation Guide
 
 * [Installing SmartSVG on Any Website](./Installation/)
-  * [WordPress](./Installation/WordPress/)
+
+## Content Management Systems
+
+* [WordPress](./WordPress/)
 
 ## Front End Libraries
 

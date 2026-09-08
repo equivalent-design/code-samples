@@ -44,12 +44,6 @@ img#mysvg {
 | --- | --- |
 | The image is linked to, just like any other image, and is cacheable for faster subsequent load times. | Internal CSS media queries in the SVG file are ignored by Safari on Mac. The CSS required for full Safari support removes the fluid nature of the file in dark mode. |
 
-## Content Management Systems
-
-The basic methods above cover any hand-written HTML page. If your site is built on a CMS, its editor or theme layer usually gets in the way of a plain `<img>` tag or inline SVG, so those need their own set of steps:
-
-* [WordPress](./WordPress/)
-
 ## SmartSVG:tm: Favicon Installation
 
 Installing a SmartSVG:tm: favicon that responds to light and dark mode as well as Windows contrast themes is a bit involved, but worth the effort. It requires the SVG favicon, an ICO favicon, three PNG fallback favicons, some link elements that get placed in your website's header, and a JSON web app manifest.
