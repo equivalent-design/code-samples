@@ -9,6 +9,7 @@ This repository contains code samples for working with SmartSVG™. They are mea
 ## Content Management Systems
 
 * [WordPress](./WordPress/)
+* [Squarespace](./Squarespace/)
 
 ## Front End Libraries
 
