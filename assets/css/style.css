@@ -159,7 +159,7 @@ header .btn {
   align-items: center;
   justify-content: center;
   padding: 0.6em 1.2em;
-  border-radius: 999px;
+  border-radius: 8px;
   font-weight: 600;
   font-size: 0.85rem;
   white-space: nowrap;
