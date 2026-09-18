@@ -89,7 +89,7 @@ body {
   margin: 0;
   background: var(--color-background-primary);
   color: var(--color-text-secondary);
-  font: 400 100%/1.6 var(--font-body);
+  font: 400 150%/1.6 var(--font-body);
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -130,6 +130,7 @@ header .brand {
   display: flex;
   align-items: center;
   gap: 0.6em;
+  zoom: 0.7;
 }
 
 header .brand-text {
